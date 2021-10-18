@@ -45,12 +45,12 @@ export default class ImageGallery extends Component {
           searchResult: [...prev.searchResult, ...searchResult],
           status: 'success',
         }));
+        this.props.scroll();
       })
       .catch(err => {
         console.log(err);
         this.setState({ status: 'error' });
       });
-    setTimeout(() => this.props.scroll(), 1000);
   };
 
   toggleModal = () => {

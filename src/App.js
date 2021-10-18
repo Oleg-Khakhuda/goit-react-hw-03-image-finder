@@ -21,10 +21,14 @@ export default class App extends Component {
   };
 
   onPageScroll() {
-    window.scrollTo({
-      top: document.documentElement.offsetHeight,
-      behavior: 'smooth',
-    });
+    setTimeout(
+      () =>
+        window.scrollTo({
+          top: document.documentElement.offsetHeight,
+          behavior: 'smooth',
+        }),
+      1000,
+    );
   }
 
   render() {
