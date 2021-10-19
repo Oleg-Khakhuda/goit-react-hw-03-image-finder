@@ -2,13 +2,8 @@ import { Component } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Searchbar from './Searchbar/Searchbar';
-// import { PixabayFetch } from './services/search-api';
-// import axios from 'axios';
 import './App.css';
 import ImageGallery from './ImageGallery/ImageGallery';
-// import Modal from './Modal/Modal';
-
-// const newPixabayFetch = new PixabayFetch()
 
 export default class App extends Component {
   state = {
@@ -21,14 +16,10 @@ export default class App extends Component {
   };
 
   onPageScroll() {
-    setTimeout(
-      () =>
-        window.scrollTo({
-          top: document.documentElement.offsetHeight,
-          behavior: 'smooth',
-        }),
-      1000,
-    );
+    window.scrollTo({
+      top: document.documentElement.offsetHeight,
+      behavior: 'smooth',
+    });
   }
 
   render() {

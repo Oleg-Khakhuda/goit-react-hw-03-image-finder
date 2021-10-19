@@ -26,11 +26,9 @@ export default class ImageGallery extends Component {
       newPixabayFetch
         .searchImages()
         .then(searchResult => {
-          // console.log(searchResult)
           this.setState({ searchResult, status: 'success' });
         })
         .catch(err => {
-          console.log(err);
           this.setState({ status: 'error' });
         });
     }
@@ -48,20 +46,17 @@ export default class ImageGallery extends Component {
         this.props.scroll();
       })
       .catch(err => {
-        console.log(err);
         this.setState({ status: 'error' });
       });
   };
 
   toggleModal = () => {
     this.setState({ showModal: !this.state.showModal });
-    console.log(this.state.showModal);
   };
 
   onImageClick = e => {
     e.preventDefault();
     let imgSrc = e.target.src;
-    console.log(imgSrc);
     this.setState({
       bigImg: this.state.searchResult.find(el => el.webformatURL === imgSrc),
     });
